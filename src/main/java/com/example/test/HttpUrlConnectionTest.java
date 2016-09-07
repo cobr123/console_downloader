@@ -1,4 +1,4 @@
-package com.example.downloader;
+package com.example.test;
 
 import java.io.BufferedInputStream;
 import java.io.IOException;
