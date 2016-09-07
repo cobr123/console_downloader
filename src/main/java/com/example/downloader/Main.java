@@ -1,5 +1,6 @@
 package com.example.downloader;
 
+import com.google.common.base.Stopwatch;
 import org.apache.commons.cli.*;
 
 import java.io.IOException;
@@ -13,6 +14,7 @@ import java.util.stream.Collectors;
  */
 final public class Main {
     public static void main(String[] args) throws ParseException, IOException {
+        final Stopwatch stopwatch = Stopwatch.createStarted();
         final Options options = new Options();
         options.addOption("n", true, "количество одновременно качающих потоков (1,2,3,4....)");
         options.addOption("l", true, "общее ограничение на скорость скачивания, для всех потоков, размерность - байт/секунда, можно использовать суффиксы k,m (k=1024, m=1024*1024)");
@@ -58,7 +60,8 @@ final public class Main {
             downloader.setSaveDir(saveDir);
         }
         downloader.run();
-        System.out.println("время работы:");
-        System.out.println("количество скачанных байт:");
+        stopwatch.stop();
+        System.out.println("время работы:" + stopwatch);
+        System.out.println("количество скачанных байт:" + downloader.getDownloadedBytes());
     }
 }

@@ -17,6 +17,7 @@ final public class Downloader {
     private long rateLimit = 0;
     private String saveDir;
     private Map<String, Set<String>> urlAndFile;
+    private long downloadedBytes;
 
 
     public void run() {
@@ -33,6 +34,7 @@ final public class Downloader {
                     //parallel task here, for example
                     list.parallelStream().forEach(item -> item.saveByLimit(limiter))
             ).get();
+            downloadedBytes = list.stream().map(DownloadItem::getDownloadedBytes).reduce(0L, (a, b) -> a + b);
         } catch (InterruptedException e) {
             e.printStackTrace();
         } catch (ExecutionException e) {
@@ -54,5 +56,9 @@ final public class Downloader {
 
     public void setUrlAndFile(Map<String, Set<String>> urlAndFile) {
         this.urlAndFile = urlAndFile;
+    }
+
+    public long getDownloadedBytes() {
+        return downloadedBytes;
     }
 }
