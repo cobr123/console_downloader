@@ -1,6 +1,7 @@
+package com.example.downloader;
+
 import com.google.common.util.concurrent.RateLimiter;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;

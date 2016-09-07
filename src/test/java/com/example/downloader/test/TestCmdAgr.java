@@ -1,8 +1,9 @@
+package com.example.downloader.test;
+
+import com.example.downloader.Main;
 import org.apache.commons.cli.ParseException;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by r.tabulov on 06.09.2016.

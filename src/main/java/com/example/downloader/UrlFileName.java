@@ -1,3 +1,5 @@
+package com.example.downloader;
+
 /**
  * Created by r.tabulov on 06.09.2016.
  */

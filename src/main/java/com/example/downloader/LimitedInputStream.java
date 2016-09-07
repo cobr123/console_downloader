@@ -1,3 +1,5 @@
+package com.example.downloader;
+
 import com.google.common.util.concurrent.RateLimiter;
 
 import java.io.IOException;
