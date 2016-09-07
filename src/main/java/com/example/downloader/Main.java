@@ -61,7 +61,7 @@ final public class Main {
         }
         downloader.run();
         stopwatch.stop();
-        System.out.println("время работы:" + stopwatch);
-        System.out.println("количество скачанных байт:" + downloader.getDownloadedBytes());
+        System.out.println("время работы: " + stopwatch);
+        System.out.println("количество скачанных байт: " + downloader.getDownloadedBytes());
     }
 }
